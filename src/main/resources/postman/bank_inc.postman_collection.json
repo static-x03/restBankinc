@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "bb240317-1b77-4481-99d3-0db5317abdd0",
+		"name": "bank_inc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11053182"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9000/transaction/anulation",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardId\": \"1234562232870499\",\r\n    \"transactionId\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/transaction/anulation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"transaction",
+						"anulation"
+					]
+				},
+				"description": " consiste en que a \r\npartir de la transacción de compra: \r\n• Se debe anular a partir del id de transacción \r\n• La transacción a anular no debe ser mayor a 24 horas. \r\n• La transacción quede marcada en anulada. \r\n• El valor de la compra debe volver a estar disponible en el saldo. "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/transaction/purchase",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardId\": \"1234562232870499\",\r\n    \"price\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/transaction/purchase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"transaction",
+						"purchase"
+					]
+				},
+				"description": " transacción de compra, el sistema asignará un identificador con el \r\ncual es posible consultar la transacción o realizar la anulación. "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/card/balance/1235470625162928",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/card/balance/1234562232870499",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"card",
+						"balance",
+						"1234562232870499"
+					]
+				},
+				"description": "Consulta de saldo \r\nTipo de método: GET  \r\nRecurso: /card/balance/{cardId} "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/card/balance",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardId\": \"1234562232870499\",\r\n    \"balance\": \"10000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/card/balance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"card",
+						"balance"
+					]
+				},
+				"description": "Recargar saldo \r\nTipo de método: POST  \r\nRecurso: /card/balance"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/card/1235479972699561",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/card/1235479972699561",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"card",
+						"1235479972699561"
+					]
+				},
+				"description": "Bloquear tarjeta \r\nTipo de método: DELETE  \r\nRecurso: /card/{cardId}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/card/enroll",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"cardId\": \"1234562232870499\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/card/enroll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"card",
+						"enroll"
+					]
+				},
+				"description": "Activar tarjeta \r\nTipo de método: POST \r\nRecurso: /card/enroll "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/card/123456/number ",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/card/123456/number",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"card",
+						"123456",
+						"number"
+					]
+				},
+				"description": "Generar número de tarjeta \r\nTipo de método: GET \r\nRecurso: /card/{productId}/number "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/transaction/1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/transaction/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"transaction",
+						"1"
+					]
+				},
+				"description": "Consultar transacción \r\nTipo de método: GET  \r\nRecurso: /transaction/{transactionId}"
+			},
+			"response": []
+		}
+	]
+}
