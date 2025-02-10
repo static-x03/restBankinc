@@ -6,6 +6,7 @@
 - **PostgreSQL** (Pendiente implementación)
 - **Desplegado en Azure**
 - **Puerto:** 9000
+- **Postman**
 
 ## Descripción
 Bank Inc ha contratado el desarrollo de un sistema para administrar tarjetas y transacciones mediante una API REST.
